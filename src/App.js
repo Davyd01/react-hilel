@@ -2,17 +2,19 @@ import React, { Component } from "react";
 import "./App.css";
 
 class App extends Component {
-  state = {
-    emojis: [
-      { id: 1, emoji: "🌟", votes: 0 },
-      { id: 2, emoji: "🚀", votes: 0 },
-      { id: 3, emoji: "🍕", votes: 0 },
-      { id: 4, emoji: "🏖️", votes: 0 },
-      { id: 5, emoji: "🐶", votes: 0 },
-    ],
-    winner: null,
-  };
-  
+  constructor(props) {
+    super(props);
+    this.state = {
+      emojis: [
+        { id: 1, emoji: "🌟", votes: 0 },
+        { id: 2, emoji: "🚀", votes: 0 },
+        { id: 3, emoji: "🍕", votes: 0 },
+        { id: 4, emoji: "🏖️", votes: 0 },
+        { id: 5, emoji: "🐶", votes: 0 },
+      ],
+      winner: null,
+    };
+  }
 
   handleVote = (id) => {
     const updatedEmojis = this.state.emojis.map((emoji) =>
